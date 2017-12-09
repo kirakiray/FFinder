@@ -1,0 +1,162 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+.finder {
+  display: -webkit-box;
+  display: flex;
+  height: 100%;
+}
+.finder .finder_left {
+  width: 200px;
+  background-color: #3f3655;
+}
+.finder .finder_right {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.finder_pather {
+  display: -webkit-box;
+  display: flex;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 10px;
+  font-size: 14px;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.finder_pather .finder_toptext {
+  -webkit-box-flex: 1;
+          flex: 1;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 6px;
+  padding: 0 5px;
+  -webkit-user-select: text;
+          user-select: text;
+  color: #444;
+  background-color: #f5fafc;
+  border-radius: 21px;
+}
+.tool > div {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  margin: 0 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.tool > div > img {
+  display: block;
+  height: 20px;
+}
+.finder_container {
+  -webkit-box-flex: 1;
+          flex: 1;
+  padding-top: 20px;
+  min-height: 100px;
+  -webkit-user-select: none;
+          user-select: none;
+  overflow-y: auto;
+}
+.finder_container #container {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.finder_container #container:empty {
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 200px;
+}
+.finder_container #container:empty:after {
+  display: block;
+  color: #aaa;
+  content: "空";
+  font-size: 14px;
+}
+.finder_container .block {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 5px 8px;
+  -webkit-transition: all ease .2s;
+  transition: all ease .2s;
+}
+.finder_container .block:hover {
+  background-color: rgba(0, 126, 255, 0.07);
+}
+.finder_container .block.no_permission .icon {
+  position: relative;
+}
+.finder_container .block.no_permission .icon:after {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 15px;
+  height: 15px;
+  line-height: 10px;
+  text-align: center;
+  content: "-";
+  color: #fff;
+  background-color: #fb4747;
+}
+.finder_container .block > .icon {
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+}
+.finder_container .block > .title {
+  height: 34px;
+  margin-top: 5px;
+  padding: 0 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  overflow: hidden;
+  word-break: break-all;
+}
+.finder_container .block.hide_mode .icon,
+.finder_container .block.hide_mode .title {
+  opacity: .5;
+}
+.finder_container .block.select_mode {
+  background-color: rgba(0, 126, 255, 0.2);
+}
+.finder_container .file_block > .icon {
+  background-image: url(../img/icon/file.png);
+}
+.finder_container .dir_block > .icon {
+  background-image: url(../img/icon/dir.png);
+}

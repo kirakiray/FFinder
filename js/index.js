@@ -99,7 +99,9 @@
             });
 
             now_dir = dirpath;
-            pathEle.text(now_dir);
+
+            // 设置路径
+            pathtool.setPath(now_dir);
 
             // 记录历史
             localStorage['_jump_dir_path'] = now_dir;
@@ -116,6 +118,7 @@
 
     // 双击辅助断定
     let dbc = 0;
+
     // 选中文件或文件夹
     $('.finder_container').on('mousedown', ".block", function(e) {
         let $this = $(this);
@@ -137,32 +140,16 @@
         }
         e.stopPropagation();
     });
+
+
+    // pathtool 主动触发事件绑定
+    pathtool.on('driveChange', (e, data) => {
+        jumpDir(data.path);
+    });
+
     // 失焦
     $('body').on('mousedown', () => {
         $('.select_mode').removeClass('select_mode');
     })
-
-    // 输入回车
-    pathEle.on('keypress', (e) => {
-        if (e.keyCode == 13) {
-            e.preventDefault();
-            let path = pathEle.text();
-            jumpDir(path);
-        }
-    });
-
-    // 点击后退
-    $('#back_btn').click(() => {
-        let path = pathEle.text();
-        // 获取前一个地址
-        let back_path = path.match(/(.+)\/.+/);
-        if (back_path) {
-            back_path = back_path[1];
-        } else {
-            back_path = "/";
-        }
-
-        jumpDir(back_path);
-    });
 
 })();

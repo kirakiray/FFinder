@@ -7,41 +7,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试文件</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="source/font_opap41r69553ik9/iconfont.css">
     <script src="js/jquery-2.2.0.min.js"></script>
-    <script src="js/index.js"></script>
 </head>
 
 <body>
-    <div class="finder_title">
-        <div>当前路径</div>
-        <div class="finder_toptext">/个人/haha</div>
+    <div class="finder">
+        <div class="finder_left"></div>
+        <div class="finder_right">
+            <div class="finder_pather">
+                <div id="path" contenteditable="true" class="finder_toptext">/</div>
+                <div class="tool">
+                    <div id="back_btn" class="iconfont">&#xe636;</div>
+                </div>
+            </div>
+            <div class="finder_pather">
+                <div id="path" class="finder_toptext view_mode">
+                    <div class="finder_path_dir iconfont">
+                        <div class="path_dir_name">&#xe614;</div>
+                        <div class="path_dir_mark">&#xe608;</div>
+                    </div>
+                    <div class="finder_path_dir iconfont">
+                        <div class="path_dir_name">Photo</div>
+                        <div class="path_dir_mark">&#xe608;</div>
+                    </div>
+                    <div class="finder_path_dir iconfont">
+                        <div class="path_dir_name">HaHa</div>
+                        <div class="path_dir_mark">&#xe608;</div>
+                    </div>
+                </div>
+                <div class="tool">
+                    <div id="back_btn" class="iconfont">&#xe636;</div>
+                </div>
+            </div>
+            <div class="finder_container">
+                <div id="container">
+                    <div class="block file_block hide_mode" data-path="/.DS_Store" title=".DS_Store">
+                        <div class="icon"></div>
+                        <div class="title">.DS_Store</div>
+                    </div>
+                    <div class="block dir_block hide_mode no_permission" data-path="/.DocumentRevisions-V100" title=".DocumentRevisions-V100">
+                        <div class="icon"></div>
+                        <div class="title">.DocumentRevisions-V100</div>
+                    </div>
+                    <div class="block dir_block hide_mode" data-path="/.HFS+ Private Directory Data
+" title=".HFS+ Private Directory Data
+">
+                        <div class="icon"></div>
+                        <div class="title">.HFS+ Private Directory Data
+                        </div>
+                    </div>
+                    <div class="block dir_block hide_mode" data-path="/.PKInstallSandboxManager" title=".PKInstallSandboxManager">
+                        <div class="icon"></div>
+                        <div class="title">.PKInstallSandboxManager</div>
+                    </div>
+                    <div class="block dir_block hide_mode no_permission" data-path="/.PKInstallSandboxManager-SystemSoftware" title=".PKInstallSandboxManager-SystemSoftware">
+                        <div class="icon"></div>
+                        <div class="title">.PKInstallSandboxManager-SystemSoftware</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="finder_container">
-        <div class="file_block block">
-            <div class="icon"></div>
-            <div class="title">haha</div>
-        </div>
-        <div class="dir_block block">
-            <div class="icon"></div>
-            <div class="title">asdasdasd22222222</div>
-        </div>
-        <div class="file_block block">
-            <div class="icon"></div>
-            <div class="title">haha</div>
-        </div>
-        <div class="dir_block block">
-            <div class="icon"></div>
-            <div class="title">asdasdasd22222222</div>
-        </div>
-        <div class="file_block block">
-            <div class="icon"></div>
-            <div class="title">haha</div>
-        </div>
-        <div class="dir_block block no_permission">
-            <div class="icon"></div>
-            <div class="title">asdasdasd22222222</div>
-        </div>
-    </div>
+
+
 </body>
 
 </html>

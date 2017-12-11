@@ -77,6 +77,9 @@ body {
 .finder_pather .finder_path_dir:last-child .path_dir_mark {
   display: none;
 }
+.finder_pather .finder_path_dir:last-child .path_dir_name {
+  cursor: default;
+}
 .finder_pather .finder_path_dir:hover .path_dir_name {
   color: #000;
 }

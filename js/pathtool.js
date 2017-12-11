@@ -81,7 +81,7 @@
         }
 
         // 去掉最后的 /
-        back_path = back_path.replace(/\/$/, "");
+        back_path.length > 1 && (back_path = back_path.replace(/\/$/, ""));
 
         if (back_path == pathVal) {
             return;

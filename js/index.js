@@ -1,4 +1,4 @@
-(async() => {
+(async () => {
     let root = 'http://localhost:8804/getdir/';
     // function
     // 获取目录的数据
@@ -54,10 +54,15 @@
 
     // 跳转目录的方法
     async function jumpDir(dirpath) {
+        // 提示
+        finderLeft.add(`正在进入:${dirpath}`);
+
         // 获取目录
         let d = await getDir(dirpath);
 
         if (d.stat == 1) {
+            finderLeft.loadSucceed(dirpath);
+
             // fragment
             let fragEle = $(document.createDocumentFragment());
             d.data.forEach(e => {
@@ -109,6 +114,7 @@
             // 填充选项
             container.empty().append(fragEle);
         } else {
+            finderLeft.loadError(dirpath, d.msg);
             console.log(d);
         }
     }
@@ -120,7 +126,7 @@
     let dbc = 0;
 
     // 选中文件或文件夹
-    $('.finder_container').on('mousedown', ".block", function(e) {
+    $('.finder_container').on('mousedown', ".block", function (e) {
         let $this = $(this);
         if (dbc) {
             // 双击则进行跳转链接操作（如果是目录的话）

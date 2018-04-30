@@ -17,11 +17,33 @@ body {
     .finder_left {
         width: 300px; // background-color: rgba(26, 0, 89, .8); 
         background-color: #3f3655;
+        overflow-y: auto;
     }
     .finder_right {
         display: flex;
         flex: 1;
         flex-direction: column;
+    }
+}
+
+.finder_left_line {
+    padding: 0 5px;
+    color: #fff;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 27px;
+    line-height: 27px;
+    animation: finder_left_line_anime ease .5s;
+}
+
+@keyframes finder_left_line_anime{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 27px;
     }
 }
 
@@ -68,7 +90,7 @@ body {
             .path_dir_mark {
                 display: none;
             }
-            .path_dir_name{
+            .path_dir_name {
                 cursor: default;
             }
         }

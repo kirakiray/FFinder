@@ -27,6 +27,10 @@ body {
   -webkit-box-direction: normal;
           flex-direction: column;
 }
+.finder_left .left_text {
+  -webkit-box-flex: 1;
+          flex: 1;
+}
 .finder_left_line {
   padding: 0 5px;
   color: #fff;
